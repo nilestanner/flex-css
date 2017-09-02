@@ -1,0 +1,86 @@
+$sizes: 1920px, 1280px, 960px, 600px, 350px;
+$size-names: 'lg', 'md', 'sm', 'xs', 'xxs';
+@for $i from 1 through 5 {
+   @media screen and (max-width: nth($sizes,$i)){
+    [layout-#{nth($size-names,$i)}="row"] {
+      @include row;
+    }
+    [layout-#{nth($size-names,$i)}="col"] {
+      @include col;
+    }
+    [v-align-#{nth($size-names,$i)}="center"] {
+      align-items: center;
+    }
+
+    [v-align-#{nth($size-names,$i)}="top"] {
+      align-items: flex-start;
+    }
+
+    [v-align-#{nth($size-names,$i)}="bottom"] {
+      align-items: flex-end;
+    }
+    [h-align-#{nth($size-names,$i)}="center"] {
+      justify-content: center;
+    }
+
+    [h-align-#{nth($size-names,$i)}="left"] {
+      @include left;
+    }
+
+    [h-align-#{nth($size-names,$i)}="right"] {
+      @include right;
+    }
+    [align-#{nth($size-names,$i)}="center center"],
+    [align-#{nth($size-names,$i)}="center"] {
+      justify-content: center;
+      align-items: center;
+    }
+
+    [align-#{nth($size-names,$i)}="top left"] {
+      align-items: flex-start;
+      @include left;
+    }
+
+    [align-#{nth($size-names,$i)}="bottom left"] {
+      align-items: flex-end;
+      @include left;
+    }
+
+    [align-#{nth($size-names,$i)}="top right"] {
+      align-items: flex-start;
+      @include right;
+    }
+
+    [align-#{nth($size-names,$i)}="bottom right"] {
+      align-items: flex-end;
+      @include right;
+    }
+  }
+}
+@media screen and (min-width: 1920px) {
+  [layout-xl="row"] {
+    @include row;
+  }
+  [v-align-xl="center"] {
+    align-items: center;
+  }
+
+  [v-align-xl="top"] {
+    align-items: flex-start;
+  }
+
+  [v-align-xl="bottom"] {
+    align-items: flex-end;
+  }
+  [h-align-xl="center"] {
+    justify-content: center;
+  }
+
+  [h-align-xl="left"] {
+    @include left;
+  }
+
+  [h-align-xl="right"] {
+    @include right;
+  }
+}

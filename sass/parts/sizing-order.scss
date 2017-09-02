@@ -1,0 +1,18 @@
+@for $i from 0 through 100 {
+  [size="#{$i}"] {
+    flex: $i/100;
+  }
+  [order="#{$i - 50}"] {
+    order: $i - 50;
+  }
+  [grow="#{$i}"] {
+    flex-grow: $i/100;
+  }
+  [shrink="#{$i}"] {
+    flex-shrink: $i/100;
+  }
+}
+
+:not([order]) {
+  order: 100;
+}
