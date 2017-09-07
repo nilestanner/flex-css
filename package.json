@@ -1,0 +1,19 @@
+{
+  "name": "flex-css",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "serve": "http-server -o",
+    "build-base": "sass sass/main-base.scss generated/flex-css-base.css",
+    "build-all": "sass sass/main-all.scss generated/flex-css-all.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@bitbucket.org/nilestanner/flex-css.git"
+  },
+  "author": "Niles Tanner",
+  "license": "MIT",
+  "homepage": "https://bitbucket.org/nilestanner/flex-css#readme"
+}
