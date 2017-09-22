@@ -1,0 +1,49 @@
+.container {
+  width:700px;
+  height:700px;
+  border: 2px solid #f441a6;
+  margin: 10px;
+}
+
+.item {
+  width:100px;
+  height:100px;
+  background-color:#4286f4;
+  color:white;
+  line-height:100px;
+  text-align:center;
+}
+
+#main {
+  width: 100%;
+}
+
+/*.row {
+  border: 2px solid red;
+}*/
+span {
+  position: absolute;
+  margin-top:-20px;
+  display:block;
+  background-color: green;
+  color: white;
+}
+
+.config {
+
+}
+
+body {
+  display: flex;
+}
+
+.alignment-box {
+  width: 130px;
+  height:130px;
+}
+
+.alignment-box input {
+  width:40px;
+  height:40px;
+  margin: 0px;
+}

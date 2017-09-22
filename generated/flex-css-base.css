@@ -12,8 +12,6 @@
 
 [align^="top"], [v-align="top"] {
   align-items: flex-start; }
-  [align^="top"][reverse], [v-align="top"][reverse] {
-    align-items: flex-end; }
   [align^="top"][layout="col"], [v-align="top"][layout="col"] {
     justify-content: flex-start; }
   [align^="top"][layout="col"][reverse], [v-align="top"][layout="col"][reverse] {
@@ -21,8 +19,6 @@
 
 [align^="bottom"], [v-align="bottom"] {
   align-items: flex-end; }
-  [align^="bottom"][reverse], [v-align="bottom"][reverse] {
-    align-items: flex-start; }
   [align^="bottom"][layout="col"], [v-align="bottom"][layout="col"] {
     justify-content: flex-end; }
   [align^="bottom"][layout="col"][reverse], [v-align="bottom"][layout="col"][reverse] {
@@ -62,5 +58,8 @@
   flex-direction: column; }
   [layout="col"][reverse] {
     flex-direction: column-reverse; }
+
+[reverse] {
+  flex-direction: row-reverse; }
 
 /*# sourceMappingURL=flex-css-base.css.map */

@@ -6,6 +6,8 @@
 [v-align] {
   display: flex;
 }
+
+
 @mixin row {
   flex-direction: row;
   &[reverse] {
@@ -47,9 +49,9 @@
 
 @mixin top {
   align-items: flex-start;
-  &[reverse] {
-    align-items: flex-end;
-  }
+  // &[reverse] {
+  //   align-items: flex-end;
+  // }
   &[layout="col"]{
     justify-content: flex-start;
   }
@@ -60,9 +62,9 @@
 
 @mixin bottom {
   align-items: flex-end;
-  &[reverse] {
-    align-items: flex-start;
-  }
+  // &[reverse] {
+  //   align-items: flex-start;
+  // }
   &[layout="col"]{
     justify-content: flex-end;
   }
@@ -116,4 +118,8 @@
 
 [layout="col"] {
   @include col;
+}
+
+[reverse] {
+  flex-direction: row-reverse;
 }

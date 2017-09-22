@@ -1,0 +1,433 @@
+<html>
+<header>
+  <title>Flex-css</title>
+  <link rel="stylesheet" type="text/css" href="demo/demo.css">
+  <link rel="stylesheet" type="text/css" href="generated/flex-css-base.css">
+  <script src="demo/demo.js"></script>
+</header>
+<body>
+  <div id="demo" class="container">
+    <div class="item">1</div>
+    <div class="item">2</div>
+    <div class="item">3</div>
+    <div class="item">4</div>
+  </div>
+  <div class="config">
+
+    <h3>Layout</h3>
+    <input type="radio" name="layout" value="col" onchange="setByRadio('layout')"> Column
+    <input type="radio" name="layout" value="row" onchange="setByRadio('layout')"> Row
+    <h3>Alignment</h3>
+    <div class="alignment-box">
+      <input type="radio" name="align" value="top left" onchange="setByRadio('align')">
+      <input type="radio" name="align" value="top center" onchange="setByRadio('align')">
+      <input type="radio" name="align" value="top right" onchange="setByRadio('align')">
+      <input type="radio" name="align" value="center left" onchange="setByRadio('align')">
+      <input type="radio" name="align" value="center" onchange="setByRadio('align')">
+      <input type="radio" name="align" value="center right" onchange="setByRadio('align')">
+      <input type="radio" name="align" value="bottom left" onchange="setByRadio('align')">
+      <input type="radio" name="align" value="bottom center" onchange="setByRadio('align')">
+      <input type="radio" name="align" value="bottom right" onchange="setByRadio('align')">
+    </div>
+    <h3>Spacing</h3>
+    <input type="radio" name="space" value="between" onchange="setByRadio('space')"> Between
+    <input type="radio" name="space" value="around" onchange="setByRadio('space')"> Around
+    <input type="radio" name="space" value="" onchange="toggleAttribute('space','demo')"> None
+    <br>
+    <button type="button" name="button" onclick="toggleAttribute('reverse','demo')">Reverse</button>
+  </div>
+
+  <!-- <div id="main" layout="col">
+    <div class="container">
+      <span>Default</span>
+      <div class="item">1</div>
+      <div class="item">2</div>
+      <div class="item">3</div>
+      <div class="item">4</div>
+    </div>
+
+    <h2>Left alignment</h2>
+    <div class="row" layout="row">
+      <div class="container" align="left">
+        <span>align="left"</span>
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+        <div class="item">4</div>
+      </div>
+      <div class="container" align="bottom left">
+        <span>align="bottom left"</span>
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+        <div class="item">4</div>
+      </div>
+      <div class="container" align="top left">
+        <span>align="top left"</span>
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+        <div class="item">4</div>
+      </div>
+      <div class="container" align="center left">
+        <span>align="center left"</span>
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+        <div class="item">4</div>
+      </div>
+    </div>
+
+    <h2>Left alignment with reverse</h2>
+    <div class="row" layout="row">
+      <div class="container" align="left" reverse>
+        <span>align="left" reverse</span>
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+        <div class="item">4</div>
+      </div>
+      <div class="container" align="bottom left" reverse>
+        <span>align="bottom left" reverse</span>
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+        <div class="item">4</div>
+      </div>
+      <div class="container" align="top left" reverse>
+        <span>align="top left" reverse</span>
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+        <div class="item">4</div>
+      </div>
+      <div class="container" align="center left" reverse>
+        <span>align="center left" reverse</span>
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+        <div class="item">4</div>
+      </div>
+    </div>
+    <h2>Right alignment</h2>
+    <div class="row" layout="row">
+      <div class="container" align="right">
+        <span>align="right"</span>
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+        <div class="item">4</div>
+      </div>
+      <div class="container" align="bottom right">
+        <span>align="bottom right"</span>
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+        <div class="item">4</div>
+      </div>
+      <div class="container" align="top right">
+        <span>align="top right"</span>
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+        <div class="item">4</div>
+      </div>
+      <div class="container" align="center right">
+        <span>align="center right"</span>
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+        <div class="item">4</div>
+      </div>
+    </div>
+    <h2>Right alignment with reverse</h2>
+    <div class="row" layout="row">
+      <div class="container" align="right" reverse>
+        <span>align="right" reverse</span>
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+        <div class="item">4</div>
+      </div>
+      <div class="container" align="bottom right" reverse>
+        <span>align="bottom right" reverse</span>
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+        <div class="item">4</div>
+      </div>
+      <div class="container" align="top right" reverse>
+        <span>align="top right" reverse</span>
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+        <div class="item">4</div>
+      </div>
+      <div class="container" align="center right" reverse>
+        <span>align="center right" reverse</span>
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+        <div class="item">4</div>
+      </div>
+    </div>
+    <h2>Center alignment</h2>
+    <div class="row" layout="row">
+      <div class="container" align="center">
+        <span>align="center"</span>
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+        <div class="item">4</div>
+      </div>
+      <div class="container" align="bottom center">
+        <span>align="bottom center"</span>
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+        <div class="item">4</div>
+      </div>
+      <div class="container" align="top center">
+        <span>align="top center"</span>
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+        <div class="item">4</div>
+      </div>
+      <div class="container" align="center center">
+        <span>align="center center"</span>
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+        <div class="item">4</div>
+      </div>
+    </div>
+    <h2>Center alignment with reverse</h2>
+    <div class="row" layout="row">
+      <div class="container" align="center" reverse>
+        <span>align="center" reverse</span>
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+        <div class="item">4</div>
+      </div>
+      <div class="container" align="bottom center" reverse>
+        <span>align="bottom center" reverse</span>
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+        <div class="item">4</div>
+      </div>
+      <div class="container" align="top center" reverse>
+        <span>align="top center" reverse</span>
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+        <div class="item">4</div>
+      </div>
+      <div class="container" align="center center" reverse>
+        <span>align="center center" reverse</span>
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+        <div class="item">4</div>
+      </div>
+    </div>
+
+    <h1>layout="col"</h1>
+
+    <h2>Left alignment</h2>
+    <div class="row" layout="row">
+      <div class="container" align="left" layout="col">
+        <span>align="left"</span>
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+        <div class="item">4</div>
+      </div>
+      <div class="container" align="bottom left" layout="col">
+        <span>align="bottom left"</span>
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+        <div class="item">4</div>
+      </div>
+      <div class="container" align="top left" layout="col">
+        <span>align="top left"</span>
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+        <div class="item">4</div>
+      </div>
+      <div class="container" align="center left" layout="col">
+        <span>align="center left"</span>
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+        <div class="item">4</div>
+      </div>
+    </div>
+
+    <h2>Left alignment with reverse</h2>
+    <div class="row" layout="row">
+      <div class="container" align="left" reverse layout="col">
+        <span>align="left" reverse</span>
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+        <div class="item">4</div>
+      </div>
+      <div class="container" align="bottom left" reverse layout="col">
+        <span>align="bottom left" reverse</span>
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+        <div class="item">4</div>
+      </div>
+      <div class="container" align="top left" reverse layout="col">
+        <span>align="top left" reverse</span>
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+        <div class="item">4</div>
+      </div>
+      <div class="container" align="center left" reverse layout="col">
+        <span>align="center left" reverse</span>
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+        <div class="item">4</div>
+      </div>
+    </div>
+    <h2>Right alignment</h2>
+    <div class="row" layout="row">
+      <div class="container" align="right" layout="col">
+        <span>align="right"</span>
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+        <div class="item">4</div>
+      </div>
+      <div class="container" align="bottom right" layout="col">
+        <span>align="bottom right"</span>
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+        <div class="item">4</div>
+      </div>
+      <div class="container" align="top right" layout="col">
+        <span>align="top right"</span>
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+        <div class="item">4</div>
+      </div>
+      <div class="container" align="center right" layout="col">
+        <span>align="center right"</span>
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+        <div class="item">4</div>
+      </div>
+    </div>
+    <h2>Right alignment with reverse</h2>
+    <div class="row" layout="row">
+      <div class="container" align="right" reverse layout="col">
+        <span>align="right" reverse</span>
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+        <div class="item">4</div>
+      </div>
+      <div class="container" align="bottom right" reverse layout="col">
+        <span>align="bottom right" reverse</span>
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+        <div class="item">4</div>
+      </div>
+      <div class="container" align="top right" reverse layout="col">
+        <span>align="top right" reverse</span>
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+        <div class="item">4</div>
+      </div>
+      <div class="container" align="center right" reverse layout="col">
+        <span>align="center right" reverse</span>
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+        <div class="item">4</div>
+      </div>
+    </div>
+    <h2>Center alignment</h2>
+    <div class="row" layout="row">
+      <div class="container" align="center" layout="col">
+        <span>align="center"</span>
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+        <div class="item">4</div>
+      </div>
+      <div class="container" align="bottom center" layout="col">
+        <span>align="bottom center"</span>
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+        <div class="item">4</div>
+      </div>
+      <div class="container" align="top center" layout="col">
+        <span>align="top center"</span>
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+        <div class="item">4</div>
+      </div>
+      <div class="container" align="center center" layout="col">
+        <span>align="center center"</span>
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+        <div class="item">4</div>
+      </div>
+    </div>
+    <h2>Center alignment with reverse</h2>
+    <div class="row" layout="row">
+      <div class="container" align="center" reverse layout="col">
+        <span>align="center" reverse</span>
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+        <div class="item">4</div>
+      </div>
+      <div class="container" align="bottom center" reverse layout="col">
+        <span>align="bottom center" reverse</span>
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+        <div class="item">4</div>
+      </div>
+      <div class="container" align="top center" reverse layout="col">
+        <span>align="top center" reverse</span>
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+        <div class="item">4</div>
+      </div>
+      <div class="container" align="center center" reverse layout="col">
+        <span>align="center center" reverse</span>
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+        <div class="item">4</div>
+      </div>
+    </div>
+
+    <div class="">
+
+    </div>
+
+  </div> -->
+</body>
+</html>
