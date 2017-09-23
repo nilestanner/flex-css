@@ -1,15 +1,14 @@
-@for $i from 0 through 100 {
-  [size="#{$i}"] {
-    flex: $i/100;
+[size],
+[order] {
+  display: flex;
+}
+
+@for $i from 0 through 20 {
+  [size="#{$i*5}"] {
+    flex: $i/20;
   }
-  [order="#{$i - 50}"] {
-    order: $i - 50;
-  }
-  [grow="#{$i}"] {
-    flex-grow: $i/100;
-  }
-  [shrink="#{$i}"] {
-    flex-shrink: $i/100;
+  [order="#{$i - 10}"] {
+    order: $i - 10;
   }
 }
 
