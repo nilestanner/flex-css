@@ -1,0 +1,55 @@
+<html>
+<header>
+  <title>Flex-css</title>
+  <link href="https://fonts.googleapis.com/css?family=Comfortaa|Poiret+One" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="demo.css">
+  <link rel="stylesheet" type="text/css" href="../generated/flex-css-all.css">
+
+  <link rel="stylesheet" href="highlight/styles/atom-one-dark.css">
+  <script src="highlight/highlight.pack.js"></script>
+  <script src="demo.js"></script>
+</header>
+<body class="demo" onload="displayHTML()">
+  <div id="demo">
+  <div>1</div>
+  <div>2</div>
+  <div>3</div>
+  <div>4</div>
+</div>
+  <div class="config">
+
+    <h3>Layout</h3>
+    <input type="radio" name="layout" value="col" onchange="setByRadio('layout')"> Column
+    <input type="radio" name="layout" value="row" onchange="setByRadio('layout')"> Row
+    <h3>Alignment</h3>
+    <div class="alignment-box">
+      <input type="radio" name="align" value="top left" onchange="setByRadio('align')">
+      <input type="radio" name="align" value="top center" onchange="setByRadio('align')">
+      <input type="radio" name="align" value="top right" onchange="setByRadio('align')">
+      <input type="radio" name="align" value="center left" onchange="setByRadio('align')">
+      <input type="radio" name="align" value="center" onchange="setByRadio('align')">
+      <input type="radio" name="align" value="center right" onchange="setByRadio('align')">
+      <input type="radio" name="align" value="bottom left" onchange="setByRadio('align')">
+      <input type="radio" name="align" value="bottom center" onchange="setByRadio('align')">
+      <input type="radio" name="align" value="bottom right" onchange="setByRadio('align')">
+    </div>
+    <h3>Spacing</h3>
+    <input type="radio" name="space" value="between" onchange="setByRadio('space')"> Between
+    <input type="radio" name="space" value="around" onchange="setByRadio('space')"> Around
+    <input type="radio" name="space" value="" onchange="toggleAttribute('space','demo')"> None
+    <br>
+    <h3>Reverse elements</h3>
+    <button class="btn" onclick="toggleAttribute('reverse','demo')"><p>Reverse</p></button>
+    <h3>Elements</h3>
+    Item 1 size: <input type="number" name="size-1" min="0" max="100" step="5" onchange="setItemByInput('size',0,'size-1')"> order: <input type="number" min="-10" max="10" step="1" name="order-1" onchange="setItemByInput('order',0,'order-1')"><br>
+    Item 2 size: <input type="number" name="size-2" min="0" max="100" step="5" onchange="setItemByInput('size',1,'size-2')"> order: <input type="number" min="-10" max="10" step="1" name="order-2" onchange="setItemByInput('order',1,'order-2')"><br>
+    Item 3 size: <input type="number" name="size-3" min="0" max="100" step="5" onchange="setItemByInput('size',2,'size-3')"> order: <input type="number" min="-10" max="10" step="1" name="order-3" onchange="setItemByInput('order',2,'order-3')"><br>
+    Item 4 size: <input type="number" name="size-4" min="0" max="100" step="5" onchange="setItemByInput('size',3,'size-4')"> order: <input type="number" min="-10" max="10" step="1" name="order-4" onchange="setItemByInput('order',3,'order-4')"><br>
+    <h3>HTML</h3>
+    <pre><code id="display" class="hljs html"></code></pre>
+  </div>
+
+
+
+</body>
+</html>

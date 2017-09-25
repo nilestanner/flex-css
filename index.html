@@ -1,52 +1,261 @@
 <html>
 <header>
   <title>Flex-css</title>
+  <link href="https://fonts.googleapis.com/css?family=Comfortaa|Poiret+One" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="demo/demo.css">
-  <link rel="stylesheet" type="text/css" href="generated/flex-css-all.css">
+  <link rel="stylesheet" type="text/css" href="../generated/flex-css-all.css">
 
   <link rel="stylesheet" href="demo/highlight/styles/atom-one-dark.css">
   <script src="demo/highlight/highlight.pack.js"></script>
-  <script src="demo/demo.js"></script>
 </header>
-<body onload="displayHTML()">
-  <div id="demo">
-    <div>1</div>
-    <div>2</div>
-    <div>3</div>
-    <div>4</div>
-  </div>
-  <div class="config">
-
-    <h3>Layout</h3>
-    <input type="radio" name="layout" value="col" onchange="setByRadio('layout')"> Column
-    <input type="radio" name="layout" value="row" onchange="setByRadio('layout')"> Row
-    <h3>Alignment</h3>
-    <div class="alignment-box">
-      <input type="radio" name="align" value="top left" onchange="setByRadio('align')">
-      <input type="radio" name="align" value="top center" onchange="setByRadio('align')">
-      <input type="radio" name="align" value="top right" onchange="setByRadio('align')">
-      <input type="radio" name="align" value="center left" onchange="setByRadio('align')">
-      <input type="radio" name="align" value="center" onchange="setByRadio('align')">
-      <input type="radio" name="align" value="center right" onchange="setByRadio('align')">
-      <input type="radio" name="align" value="bottom left" onchange="setByRadio('align')">
-      <input type="radio" name="align" value="bottom center" onchange="setByRadio('align')">
-      <input type="radio" name="align" value="bottom right" onchange="setByRadio('align')">
+<body class="main" onload="hljs.initHighlighting();">
+  <div class="title">
+    <h1>Flex css</h1>
+    <div class="description">
+      A simple, lightweight, css library for aligning and orginizing elements;
     </div>
-    <h3>Spacing</h3>
-    <input type="radio" name="space" value="between" onchange="setByRadio('space')"> Between
-    <input type="radio" name="space" value="around" onchange="setByRadio('space')"> Around
-    <input type="radio" name="space" value="" onchange="toggleAttribute('space','demo')"> None
-    <br><br>
-    <h3>Reverse elements</h3>
-    <button type="button" name="button" onclick="toggleAttribute('reverse','demo')">Reverse</button>
-    <h3>Elements</h3>
-    Item 1 size: <input type="number" name="size-1" min="0" max="100" step="5" onchange="setItemByInput('size',0,'size-1')"> order: <input type="number" min="-10" max="10" step="1" name="order-1" onchange="setItemByInput('order',0,'order-1')"><br>
-    Item 2 size: <input type="number" name="size-2" min="0" max="100" step="5" onchange="setItemByInput('size',1,'size-2')"> order: <input type="number" min="-10" max="10" step="1" name="order-2" onchange="setItemByInput('order',1,'order-2')"><br>
-    Item 3 size: <input type="number" name="size-3" min="0" max="100" step="5" onchange="setItemByInput('size',2,'size-3')"> order: <input type="number" min="-10" max="10" step="1" name="order-3" onchange="setItemByInput('order',2,'order-3')"><br>
-    Item 4 size: <input type="number" name="size-4" min="0" max="100" step="5" onchange="setItemByInput('size',3,'size-4')"> order: <input type="number" min="-10" max="10" step="1" name="order-4" onchange="setItemByInput('order',3,'order-4')"><br>
-    <h3>HTML</h3>
-    <pre><code id="display" class="hljs html"></code></pre>
   </div>
+
+  <div class="indent">
+    <div class="nav">
+      <a href="demo/"><button class="btn"><h2>Demo</h2></button></a>
+      <a href="#links"><button class="btn"><h2>Usage</h2></button></a>
+      <a href="#placement"><button class="btn"><h2>Placement</h2></button></a>
+      <a href="#sizing"><button class="btn"><h2>Sizing</h2></button></a>
+      <a href="#responsive"><button class="btn"><h2>Responsive</h2></button></a>
+    </div>
+    <h2>Usage</h2>
+  </div>
+  <hr>
+  <div class="indent">
+    <h3 id="links">Including css files</h3>
+    <b>Placement only</b> <i>(~1.6Kb)</i>
+  </div>
+
+  <pre>
+    <code id="display" class="hljs html">
+      ADD PLACEMENT LINK
+    </code>
+  </pre>
+  <div class="indent">
+    <b>Placement with Sizing</b> <i>(~2.5Kb)</i>
+  </div>
+
+  <pre>
+    <code id="display" class="hljs html">
+      ADD LINK
+    </code>
+  </pre>
+  <div class="indent">
+    <b>Everything with responsive layouts</b> <i>(~10.8Kb)</i>
+  </div>
+
+  <pre>
+    <code id="display" class="hljs html">
+      ADD LINK
+    </code>
+  </pre>
+  <div class="indent">
+    <h2>Placement</h2>
+  </div>
+  <hr>
+  <div class="indent">
+    <h3>Layout</h3>
+    <p>Attribute: <span class="markup attr">layout</span></p>
+    <p>Options:</p>
+    <ul>
+      <li><span class="markup value">col</span></li>
+      <li><span class="markup value">row</span></li>
+    </ul>
+  </div>
+  <pre>
+    <code id="display" class="hljs html">
+    &lt;div layout="row">
+      ...
+    &lt;/div>
+
+    &lt;div layout="col">
+      .
+      .
+      .
+    &lt;/div>
+    </code>
+  </pre>
+
+  <div class="indent">
+    <h3>Align</h3>
+    <p>Align can take one or two options. When using two options the first option must be the vertical option.</p>
+    <p>Attribute: <span class="markup attr">align</span></p>
+    <div class="">
+      <p>Vertical options:</p>
+      <ul>
+        <li><span class="markup value">top</span></li>
+        <li><span class="markup value">center</span></li>
+        <li><span class="markup value">bottom</span></li>
+      </ul>
+    </div>
+
+    <div class="">
+      <p>Horizontal options:</p>
+      <ul>
+        <li><span class="markup value">left</span></li>
+        <li><span class="markup value">center</span></li>
+        <li><span class="markup value">right</span></li>
+      </ul>
+    </div>
+  </div>
+  <pre>
+    <code id="display" class="hljs html">
+    &lt;div align="top left">
+      &lt;!-- ALIGNED TO TOP LEFT -->
+    &lt;/div>
+
+    &lt;div align="center">
+      &lt;!-- ALIGNED TO THE CENTER VERTICALLY AND HORIZONTALLY -->
+    &lt;/div>
+
+    &lt;div align="right">
+      &lt;!-- ALIGNED RIGHT -->
+    &lt;/div>
+    &lt;!-- ETC.  -->
+    </code>
+  </pre>
+
+  <div class="indent">
+    <h3>Spacing</h3>
+    <p>Using the spacing attribute will override the horizontal alignment</p>
+    <p>Attribute: <span class="markup attr">space</span></p>
+    <p>Options:</p>
+    <ul>
+      <li><span class="markup value">between</span></li>
+      <li><span class="markup value">around</span></li>
+    </ul>
+  </div>
+  <pre>
+    <code id="display" class="hljs html">
+    &lt;div layout="between">
+      |.  .  .|
+    &lt;/div>
+
+    &lt;div layout="around">
+      | . . . |
+    &lt;/div>
+    </code>
+  </pre>
+  <div class="indent">
+    <h2>Sizing and Ordering</h2>
+  </div>
+  <hr>
+  <div class="indent">
+    <h3>Size</h3>
+    <p>Attribute: <span class="markup attr">size</span></p>
+    <p>Options:</p>
+    <ul>
+      <li><span class="markup value">0, 5, 10, ..., 100</span></li>
+    </ul>
+  </div>
+  <pre>
+    <code id="display" class="hljs html">
+    &lt;div layout="row">
+      &lt;div size="15">&lt;/div>
+      &lt;div size="60">&lt;/div>
+      &lt;div size="20">&lt;/div>
+    &lt;/div>
+    </code>
+  </pre>
+  <div class="indent">
+    <h3>Order</h3>
+    <p>Attribute: <span class="markup attr">order</span></p>
+    <p>Options:</p>
+    <ul>
+      <li><span class="markup value">-10, -9, ..., 9, 10</span></li>
+    </ul>
+  </div>
+  <pre>
+    <code id="display" class="hljs html">
+    &lt;div layout="row">
+      &lt;div order="5">&lt;/div>&lt;!-- ORDERED SECOND -->
+      &lt;div>&lt;/div>&lt;!-- ORDERED LAST -->
+      &lt;div order="-2">&lt;/div>&lt;!-- ORDERED FIRST -->
+    &lt;/div>
+    </code>
+  </pre>
+  <div class="indent">
+    <h2>Responsive</h2>
+  </div>
+  <hr>
+  <div class="indent">
+    <h3>Responsive Layout</h3>
+    <p>Attributes:</p>
+    <ul>
+      <li><span class="markup attr">layout-xl</span> <i>(>1920px)</i></li>
+      <li><span class="markup attr">layout-lg</span> <i>(1280px - 1920px)</i></li>
+      <li><span class="markup attr">layout-md</span> <i>(960px - 1280px)</i></li>
+      <li><span class="markup attr">layout-sm</span> <i>(600px - 960px)</i></li>
+      <li><span class="markup attr">layout-xs</span> <i>(350px - 600px)</i></li>
+      <li><span class="markup attr">layout-xxs</span> <i>(&lt;350px)</i></li>
+    </ul>
+    <p>Options:</p>
+    <ul>
+      <li><span class="markup value">col</span></li>
+      <li><span class="markup value">row</span></li>
+    </ul>
+  </div>
+  <pre>
+    <code id="display" class="hljs html">
+      &lt;div layout-lg="row" layout-sm="col">
+        &lt;!-- ON LARGE SCREENS -->
+        ...
+      &lt;/div>
+
+      &lt;div layout-lg="row" layout-sm="col">
+        &lt;!-- ON SMALL SCREENS -->
+        .
+        .
+        .
+      &lt;/div>
+    </code>
+  </pre>
+  <div class="indent">
+    <h3>Responsive Layout</h3>
+    <p>Attributes:</p>
+    <ul>
+      <li><span class="markup attr">align-xl</span> <i>(>1920px)</i></li>
+      <li><span class="markup attr">align-lg</span> <i>(1280px - 1920px)</i></li>
+      <li><span class="markup attr">align-md</span> <i>(960px - 1280px)</i></li>
+      <li><span class="markup attr">align-sm</span> <i>(600px - 960px)</i></li>
+      <li><span class="markup attr">align-xs</span> <i>(350px - 600px)</i></li>
+      <li><span class="markup attr">align-xxs</span> <i>(&lt;350px)</i></li>
+    </ul>
+    <div class="">
+      <p>Vertical options:</p>
+      <ul>
+        <li><span class="markup value">top</span></li>
+        <li><span class="markup value">center</span></li>
+        <li><span class="markup value">bottom</span></li>
+      </ul>
+    </div>
+
+    <div class="">
+      <p>Horizontal options:</p>
+      <ul>
+        <li><span class="markup value">left</span></li>
+        <li><span class="markup value">center</span></li>
+        <li><span class="markup value">right</span></li>
+      </ul>
+    </div>
+  </div>
+  <pre>
+    <code id="display" class="hljs html">
+      &lt;div align-lg="top left" align-sm="bottom right">
+        &lt;!-- ON LARGE SCREENS ALIGNED TOP LEFT -->
+      &lt;/div>
+
+      &lt;div align-lg="top left" align-sm="bottom right">
+        &lt;!-- ON SMALL SCREENS ALIGNED BOTTOM RIGHT-->
+      &lt;/div>
+    </code>
+  </pre>
 
 
 

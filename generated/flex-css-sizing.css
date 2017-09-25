@@ -1,0 +1,198 @@
+[align],
+[h-align],
+[layout],
+[reverse],
+[v-align] {
+  display: flex; }
+
+[align^="center"], [v-align="center"] {
+  align-items: center; }
+  [align^="center"][layout="col"], [v-align="center"][layout="col"] {
+    justify-content: center; }
+
+[align^="top"], [v-align="top"] {
+  align-items: flex-start; }
+  [align^="top"][layout="col"], [v-align="top"][layout="col"] {
+    justify-content: flex-start; }
+  [align^="top"][layout="col"][reverse], [v-align="top"][layout="col"][reverse] {
+    justify-content: flex-end; }
+
+[align^="bottom"], [v-align="bottom"] {
+  align-items: flex-end; }
+  [align^="bottom"][layout="col"], [v-align="bottom"][layout="col"] {
+    justify-content: flex-end; }
+  [align^="bottom"][layout="col"][reverse], [v-align="bottom"][layout="col"][reverse] {
+    justify-content: flex-start; }
+
+[align$="center"], [h-align="center"] {
+  justify-content: center; }
+  [align$="center"][layout="col"], [h-align="center"][layout="col"] {
+    align-items: center; }
+
+[align$="left"], [h-align="left"] {
+  justify-content: flex-start; }
+  [align$="left"][reverse], [h-align="left"][reverse] {
+    justify-content: flex-end; }
+  [align$="left"][layout="col"], [h-align="left"][layout="col"] {
+    align-items: flex-start; }
+
+[align$="right"], [h-align="right"] {
+  justify-content: flex-end; }
+  [align$="right"][reverse], [h-align="right"][reverse] {
+    justify-content: flex-start; }
+  [align$="right"][layout="col"], [h-align="right"][layout="col"] {
+    align-items: flex-end; }
+
+[space="between"] {
+  justify-content: space-between !important; }
+
+[space="around"] {
+  justify-content: space-around !important; }
+
+[layout="row"] {
+  flex-direction: row; }
+  [layout="row"][reverse] {
+    flex-direction: row-reverse; }
+
+[layout="col"] {
+  flex-direction: column; }
+  [layout="col"][reverse] {
+    flex-direction: column-reverse; }
+
+[reverse] {
+  flex-direction: row-reverse; }
+
+[size],
+[order] {
+  display: flex; }
+
+[size="0"] {
+  flex: 0; }
+
+[order="-10"] {
+  order: -10; }
+
+[size="5"] {
+  flex: 0.05; }
+
+[order="-9"] {
+  order: -9; }
+
+[size="10"] {
+  flex: 0.1; }
+
+[order="-8"] {
+  order: -8; }
+
+[size="15"] {
+  flex: 0.15; }
+
+[order="-7"] {
+  order: -7; }
+
+[size="20"] {
+  flex: 0.2; }
+
+[order="-6"] {
+  order: -6; }
+
+[size="25"] {
+  flex: 0.25; }
+
+[order="-5"] {
+  order: -5; }
+
+[size="30"] {
+  flex: 0.3; }
+
+[order="-4"] {
+  order: -4; }
+
+[size="35"] {
+  flex: 0.35; }
+
+[order="-3"] {
+  order: -3; }
+
+[size="40"] {
+  flex: 0.4; }
+
+[order="-2"] {
+  order: -2; }
+
+[size="45"] {
+  flex: 0.45; }
+
+[order="-1"] {
+  order: -1; }
+
+[size="50"] {
+  flex: 0.5; }
+
+[order="0"] {
+  order: 0; }
+
+[size="55"] {
+  flex: 0.55; }
+
+[order="1"] {
+  order: 1; }
+
+[size="60"] {
+  flex: 0.6; }
+
+[order="2"] {
+  order: 2; }
+
+[size="65"] {
+  flex: 0.65; }
+
+[order="3"] {
+  order: 3; }
+
+[size="70"] {
+  flex: 0.7; }
+
+[order="4"] {
+  order: 4; }
+
+[size="75"] {
+  flex: 0.75; }
+
+[order="5"] {
+  order: 5; }
+
+[size="80"] {
+  flex: 0.8; }
+
+[order="6"] {
+  order: 6; }
+
+[size="85"] {
+  flex: 0.85; }
+
+[order="7"] {
+  order: 7; }
+
+[size="90"] {
+  flex: 0.9; }
+
+[order="8"] {
+  order: 8; }
+
+[size="95"] {
+  flex: 0.95; }
+
+[order="9"] {
+  order: 9; }
+
+[size="100"] {
+  flex: 1; }
+
+[order="10"] {
+  order: 10; }
+
+:not([order]) {
+  order: 100; }
+
+/*# sourceMappingURL=flex-css-sizing.css.map */

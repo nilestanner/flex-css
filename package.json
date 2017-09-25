@@ -6,8 +6,10 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "serve": "http-server -o",
-    "build-base": "sass sass/main-base.scss generated/flex-css-base.css",
-    "build-all": "sass sass/main-all.scss generated/flex-css-all.css"
+    "build-placement": "sass sass/main-base.scss generated/flex-css-placement.css",
+    "build-sizing": "sass sass/main-sizing.scss generated/flex-css-sizing.css",
+    "build-all": "sass sass/main-all.scss generated/flex-css-all.css",
+    "min-all-builds":"sass sass/main-base.scss generated/min/flex-css-placement.css --style compressed & sass sass/main-sizing.scss generated/min/flex-css-sizing.css --style compressed & sass sass/main-all.scss generated/min/flex-css-all.css --style compressed"
   },
   "repository": {
     "type": "git",
